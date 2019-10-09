@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>陈应贤-主页</title>
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-    <script src="./src/js/vue.js"></script>
-    <script src="./src/js/jquery.min.js"></script>
-    <script src="./src/js/popper.min.js"></script>
-    <script src="./src/js/bootstrap.min.js"></script>
-    <script src="./src/js/index.js"></script>
-    <link href="./src/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="./src/css/index.css" rel="stylesheet" type="text/css"/>
-    <link href="./src/css/main.css" rel="stylesheet" type="text/css"/>
+    <title>陈应贤-文章</title>
+    <script src="./../src/js/vue.js"></script>
+    <script src="./../src/js/jquery.min.js"></script>
+    <script src="./../src/js/popper.min.js"></script>
+    <script src="./../src/js/bootstrap.min.js"></script>
+    <script src="./../src/js/article.js"></script>
+    <link href="./../src/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="./../src/css/article.css" rel="stylesheet" type="text/css"/>
+    <link href="./../src/css/main.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -46,14 +44,13 @@
                 </div>
             </div>
             <div class="row" id="index-left-content-new">
-                <div class="row border border-light shadow p-3 mb-4 ml-3 mr-3 bg-white rounded  cursor-p" v-for="datas in content" v-on:click="getArticleInfo(datas.id)">
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12" >
-                        <img width="100%" :src="datas.img_url" alt="Generic placeholder image">
-                    </div>
-                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
-                        <h5 class="pt-2 text-truncate">{{datas.title}}</h5>
-                        <div>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" v-for="datas in content">
+                    <div class="card col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 m-1 shadow p-3 mb-5 bg-white rounded" v-on:click="getArticleInfo(datas.id)">
+                        <img class="card-img-top" :src="datas.img_url" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="card-text text-secondary text-center">
+                                {{datas.title}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -65,16 +62,17 @@
                 </div>
             </div>
             <div class="row" id="index-left-content-hot">
-                <div class="row border border-light shadow p-3 mb-4 ml-3 mr-3 bg-white rounded  cursor-p" v-for="datas in content" v-on:click="getArticleInfo(datas.id)">
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12" >
-                        <img width="100%" :src="datas.img_url" alt="Generic placeholder image">
-                    </div>
-                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
-                        <h5 class="pt-2 text-truncate">{{datas.title}}</h5>
-                        <div>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" v-for="datas in content">
+                    <a href="https://www.baidu.com" style="text-decoration: none;">
+                        <div class="card col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 m-1 shadow p-3 mb-5 bg-white rounded">
+                            <img class="card-img-top" :src="datas.img_url" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="card-text text-secondary text-center">
+                                    {{datas.title}}
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -83,7 +81,7 @@
             <div class="row">
                 <div class="card col-xl col-lg-4 col-md-6 col-sm-12 col-12 m-1 border-primary" style="width: 18rem;">
                     <!--主页-右侧头像-->
-                    <img class="card-img-top align-self-center index-my-img shadow-lg mb-1 bg-white rounded" src="./src/img/20190210172554.jpg" alt="Card image cap">
+                    <img class="card-img-top align-self-center index-my-img shadow-lg mb-1 bg-white rounded" src="./../src/img/20190210172554.jpg" alt="Card image cap">
                     <div class="card-body">
                     </div>
                     <!--主页-右侧个人信息按钮组-->
@@ -103,10 +101,10 @@
                                 </ul>
                                 <div class="tab-content" id="nav-tabContent">
                                     <div class="tab-pane fade show active" id="qq-img" role="tabpanel" aria-labelledby="nav-home-tab">
-                                        <img class="card-img-top" src="./src/img/qq-img.jpg">
+                                        <img class="card-img-top" src="./../src/img/qq-img.jpg">
                                     </div>
                                     <div class="tab-pane fade" id="wechat-img" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                        <img class="card-img-top" src="./src/img/wechat-img.jpg">
+                                        <img class="card-img-top" src="./../src/img/wechat-img.jpg">
                                     </div>
                                 </div>
                             </div>

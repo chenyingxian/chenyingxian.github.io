@@ -1,0 +1,53 @@
+.card-img-top {
+	margin-top: 15px;
+}
+.index-my-img {
+	margin-top: 20px;
+	max-width: 200px;
+	max-height: 200px;
+}
+.index-content-img {
+	max-width: 200px;
+	max-height: 200px;
+}
+.cursor-p {
+	cursor : pointer;
+}
+/* 主页文章内容按照分辨率显示标题
+   不设置标题过长会影响省略效果
+ */
+@media (min-width: 100px) {
+	.col-12>.text-truncate {
+		width: 6rem;
+	}
+}
+@media (min-width: 300px) {
+	.col-12>.text-truncate {
+		width: 12rem;
+	}
+}
+@media (min-width: 300px) {
+	.col-12>.text-truncate {
+		width: 12rem;
+	}
+}
+@media (min-width: 350px) {
+	.col-12>.text-truncate {
+		width: 14rem;
+	}
+}
+@media (min-width: 400px) {
+	.col-12>.text-truncate {
+		width: 18rem;
+	}
+}
+@media (min-width: 450px) {
+	.col-12>.text-truncate {
+		width: 21rem;
+	}
+}
+@media (min-width: 500px) {
+	.col-12>.text-truncate {
+		width: 24rem;
+	}
+}
